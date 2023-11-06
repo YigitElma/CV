@@ -1,0 +1,256 @@
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+%fontawesome iconları için \fa... ile başlayan iconlar
+\usepackage{fontawesome}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% ----- LIGHT MODE -----
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{PrimaryColor}{HTML}{001F5A}
+\definecolor{SecondaryColor}{HTML}{0039AC}
+\definecolor{ThirdColor}{HTML}{F3890B}
+\definecolor{BackgroundColor}{HTML}{E2E2E2}
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\pagecolor{BackgroundColor}   
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+    \hfill \color{emphasis}\textit{\tiny{Last Updated: \today}}
+    \name{YİĞİT GÜNSÜR ELMACIOĞLU}
+    \tagline{Senior Mechanical Engineering and Physics Student}
+   
+    %% FOR USA UNIVERSITIES DO NOT INCLUDE PHOTO
+    \photoL{4cm}{cv1}
+    
+    \personalinfo{
+        \email{yigitelmacioglu@hotmail.com}\smallskip
+        \phone{+90 533 076 16 79}\hspace{0.05cm}
+        \location{İstanbul, TURKEY}\\
+        \linkedin{yigit-gunsur-elmacioglu}\hspace{0.65cm}
+        \homepage{yigitelmacioglu.com}
+        \color{accent}\faCalendar \hspace{0.1cm}\color{emphasis}5 December 1997
+    }
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.25}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        % ----- LANGUAGES -----
+        \cvsection{Languages}       
+            \cvlang{English}{TOEFL IBT: 104/120}\\
+            
+            \cvlang{French}{Upper Intermediate}\\
+            
+            \cvlang{Italian}{Beginner}\\
+
+            \cvlang{Turkish}{Native}
+        % ----- LANGUAGES ----- 
+        
+        % ----- LEARNING -----
+        \cvsection{Computer\\ Skills}
+            \cvtag{C++}
+            \cvtag{Python}
+            \cvtag{Solidworks}
+            \cvtag{MATLAB}
+            \cvtag{Simulink}
+            \cvtag{ROS}
+            \cvtag{ANSYS Mechanical}
+            \cvtag{LaTeX}
+            \cvtag{C}
+            \cvtag{HTML/CSS}
+            \cvtag{Blender}
+            \cvtag{ANSYS Fluent}
+            \cvtag{Inkscape}
+            \cvtag{Microsoft Office}
+        % ----- LEARNING -----
+           
+        % ----- Study Abroad -----
+        \cvsection{Study\\ Abroad}
+            \cvevent{Universite de Lorraine}{}{July -- Aug 2014}{}
+            \small\location{\small Nancy, FRANCE} 
+            \vspace{0.1cm} 
+            \begin{itemize}
+                \item Summer University Courses for Foreign Students
+            \end{itemize}
+            \divider
+            
+            \cvevent{Institut Lyonnais}{}{July -- Aug 2013}{}
+            \small\location{\small Lyon, FRANCE}  
+            \vspace{0.1cm} 
+            \begin{itemize}
+                \item Certificate of French Studies
+            \end{itemize}
+        % ----- Study Abroad ----- 
+                
+        % ----- STRENGTHS -----
+        \cvsection{Interests}
+            \cvtag{Aerospace}
+            \cvtag{Aeronautics}
+            \cvtag{R\&D}
+            \cvtag{Simulation}
+            \cvtag{Physics}
+            \cvtag{CAD}
+            \cvtag{Modelling}
+            \cvtag{Robotics}
+            \cvtag{Problem Solving}
+
+        % ----- STRENGTHS -----
+
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
+
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevent{\faUniversity \hspace{0.2cm}Boğaziçi University}{| Mechanical Engineering \\ \hspace{4.3cm}| Physics  (Double Major Program) }{September 2017 -- Present}{İstanbul, TURKEY}
+            \begin{itemize}
+                \item \textbf{GPA:} 3.91/4.00
+                \item \textbf{Activities:} BUMERANG Rocket Team | RASAT CanSat Team | BUSTLab
+                \item Top student in the Department of Mechanical Engineering
+                \item TUBİTAK 2205 Scholarship Undergraduate Scholarship for Science Student 
+                \item 0.02\% in Nation-wide University Placement Exam in Maths \& Sciences 
+            \end{itemize}
+            \divider
+            
+            \cvevent{\faGraduationCap \hspace{0.2cm} Galatasaray High School}{ }{September 2012 -- June 2017}{İstanbul, TURKEY}
+            \begin{itemize}
+                \item \textbf{GPA:} 87.59/100
+                \item \textbf{Activities:} Volleyball Team Captain  |  Guitarist at student band  |  Art Club Member
+                \item 0.02\% in Nation-wide High School Placement Exam
+                \item Equivalent to French Baccalauréat
+            \end{itemize}
+        % ----- EDUCATION -----       
+
+       
+        % ----- PROJECTS -----
+        \cvsection{Projects \hfill \href{https://yigitelmacioglu.com}{\normalfont\textit{\small         \MakeLowercase{*for more details check \underline{my personal website}}}}}
+            \cvevent{Magnetically Actuated Guidewire Design for MRI Scanners}{}{June 2022 - Present}{}
+            \begin{itemize}
+                \item Under the supervision of Prof. Metin Sitti and Mehmet Efe Tiryaki, I designed an actuation mechanism for guidewires using the permanent magnetic field of MRI. The Cosserat rod model is used for soft body mechanics simulation in C++ and ROS with magnetic force and moments. VSM is extensively used to investigate the continuous magnetization of the permanent magnet in high magnetic fields (B>0.5T). 
+                \item \textbf{PUBLICATION: }M. Efe Tiryaki, Yigit G. Elmacioglu, Metin Sitti, Magnetic guidewire steering at ultrahigh magnetic fields.Sci. Adv.9,eadg6438(2023).
+            \end{itemize}
+            \divider
+            
+            \cvevent{Numerical Simulation of Particle Trajectories in Ion Thruster Grid Region Plasma using a PIC-DSMC Code}{}{January 2022 - Present}{}
+            \begin{itemize}
+                \item I am working with Prof. Murat Çelik on the Simulation of an Ion thruster grid region using an in-house written plasma physics code in C++. Iterative GMRES and Eigen solvers are used to compute potential values from Poisson's equation. The probabilistic Monte Carlo technique is used for collisions, initial position, and velocity assignments.
+            \end{itemize}
+            \divider
+            
+            \cvevent{Weight Compensation Mechanism for an Elastic Metamaterial }{}{October 2021 -- June 2022}{}
+            \begin{itemize}
+                \item As the senior design project, I worked with Prof. Çetin Yılmaz on a weight compensation mechanism for an elastic metamaterial that uses inertial amplification to generate low-frequency band gaps.
+            \end{itemize}
+            \divider
+        % ----- PROJECTS -----
+    \end{paracol}
+    \pagebreak
+    \columnratio{0.5}
+    \begin{paracol}{2}
+       % ----- PROJECTS -----  
+       \cvevent{Compressor, Overdrive and Delay Effect Pedals}{\cvrepo{}{https://drive.google.com/drive/folders/1FYqa5K843rledjqui_v6XoggxNZqN_Yx?usp=sharing}}{March 2022 - June 2022}{}
+        \begin{itemize}
+            \item Starting with the schematic of classic effect pedals for electric guitar, the sound difference created by each component such as capacitor, op-amp, OTA, diode, and transistor is observed. Additionally, soldering and various manufacturing techniques are practiced. 
+        \end{itemize}
+        \divider
+
+        \cvevent{Design and Analysis of Model Satellite }{\cvrepo{|\faDropbox}{https://drive.google.com/drive/folders/1_oopsgYZp6WBVyCdFILaBYm3tUuV7ala?usp=sharing}}{Dec 2020 -- March 2021}{}
+        \begin{itemize}
+            \item As the leader of the mechanical group of the RASAT CanSat team, I worked on structural parts of the satellite design which involves a controlled landing mechanism. 
+        \end{itemize}
+              
+        \switchcolumn
+        \cvevent{Tic Tac Toe Player CNC Pen Plotter }{\cvrepo{| \faYoutubePlay}{https://www.youtube.com/watch?v=08bNxYjqjCc&list=PL_MgJ_kgj1I-vCMmU5Q0e03czItp7INRO&index=4&ab_channel=fatihkyel}}{Oct 2020 -- Jan 2021}{}
+        \begin{itemize}
+            \item As the term project of ME331-Mechatronics course, with a group of 6 people, we built a CNC Pen Plotter which uses Image Processing. I was in charge of the construction and electronics of the machine as well as testing the Python code.
+        \end{itemize}
+        \divider
+        
+        \cvevent{3DOF Simulation of Model Rocket}{\cvrepo{| \faFilePdfO}{https://drive.google.com/file/d/1BgFfGgyRHEKxycpgjdKGzhIE-6AWwasl/view?usp=sharing}}{Apr 2021 -- May 2021}{}
+        \begin{itemize}
+            \item As a member of the Bumerang Rocket Team for TeknoFest, I wrote a MATLAB code to simulate and visualize 10 000ft altitude rocket trajectory considering changing atmospheric conditions and aerodynamic coefficients.
+        \end{itemize}
+        % ----- PROJECTS -----
+    \end{paracol}   
+        
+        
+    % ----- EXPERIENCE -----
+    \cvsection{Experience}
+         \cvevent{BUSTLab}{| Undergraduate Researcher}{Oct 2021 -- Present}{İstanbul, Turkey}
+        \begin{itemize}
+            \item Currently working with Prof. Murat Çelik at Boğaziçi University Space Technologies Laboratory on Plasma Modelling. Additionally, I've extensively researched flight mechanics and created a 6DOF simulation for a plane using MATLAB/Simulink and Flight Gear. 
+        \end{itemize}
+        \divider
+        
+        \cvevent{Max Planck Institute for Intelligent Systems}{| Undergraduate Researcher}{June 2022 -- Sep 2022}{Stuttgart, Germany}
+        \begin{itemize}
+            \item Worked on a magnetic actuation mechanism via MRI for guidewires to be used in medical applications. Supervised by Prof. Metin Sitti and Mehmet Efe Tiryaki
+        \end{itemize}
+        \divider
+        
+        \cvevent{PAKKENS}{| Internship on Manufacturing}{Jan 2022 -- Feb 2022}{Bursa, Turkey}
+        \begin{itemize}
+            \item Investigated different manufacturing methods ranging from machining to injection molding. Also contributed to R\&D projects on flow simulation of a hydro block of a combi boiler.
+        \end{itemize}
+        \divider
+        
+        \cvevent{BAYKAR Technologies }{| Mechanical Engineering Intern}{Aug 2021 -- Sep 2021}{İstanbul, TURKEY}
+        \begin{itemize}
+            \item CFD Store Separation Analysis from an unmanned aircraft under the effect of propeller for various types of store geometries
+            \item Research on Guidance, Navigation, and Control of a missile and basic programming applications of different Guidance Laws
+        \end{itemize}
+        \divider
+        
+        \cvevent{Atölye Eğitim}{| Student Assistant}{Sep 2017 -- Dec 2018}{İstanbul, TURKEY}
+        \begin{itemize}
+            \item Conducted one-to-one physics and mathematics classes for senior high-school students preparing for national exams (LYS-YGS for entering college). Also gave problem sessions and prepared videos for solutions to the weekly exams
+        \end{itemize}
+    % ----- EXPERIENCE -----
+
+\end{document}
